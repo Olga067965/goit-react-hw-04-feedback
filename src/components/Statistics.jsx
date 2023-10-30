@@ -1,18 +1,20 @@
 import React from 'react';
+import Notification from './Notification';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <div>
-    <h2>Statistics</h2>
     {total === 0 ? (
-      <p>No feedback given</p>
+      <Notification message="There is no feedback" />
     ) : (
-      <ul>
-        <li>Good: {good}</li>
-        <li>Neutral: {neutral}</li>
-        <li>Bad: {bad}</li>
-        <li>Total: {total}</li>
-        <li>Positive Feedback: {positivePercentage}%</li>
-      </ul>
+      <div>
+        <ul>
+          <li>Good: {good}</li>
+          <li>Neutral: {neutral}</li>
+          <li>Bad: {bad}</li>
+          <li>Total: {total}</li>
+          <li>Positive Feedback: {positivePercentage}%</li>
+        </ul>
+      </div>
     )}
   </div>
 );
